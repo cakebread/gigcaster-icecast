@@ -11,10 +11,10 @@ USER root
 RUN useradd icecast
 
 # tools
-RUN apt-get -qq -y update && apt-get -qq -y install build-essential supervisor wget curl supervisor
+RUN apt-get -qq -y update && DEBIAN_FRONTEND=noninteractive TZ=Asia/Singapore apt-get -qq -y install build-essential supervisor wget curl supervisor
 
 # icecast
-RUN apt-get -qq -y install libxml2-dev libxslt1-dev libogg-dev libvorbis-dev libflac-dev \
+RUN DEBIAN_FRONTEND=noninteractive TZ=Asia/Singapore apt-get -qq -y install libxml2-dev libxslt1-dev libogg-dev libvorbis-dev libflac-dev \
                            libtheora-dev libspeex-dev libopus-dev libssl-dev libcurl4-openssl-dev
 
 
