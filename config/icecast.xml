@@ -2,7 +2,7 @@
     <!-- Location and admin are two arbitrary strings that are e.g. visible
          on the server info page of the icecast web interface
          (server_version.xsl). -->
-    <location>Los Angeles</location>
+    <location>Universe</location>
     <admin>webmaster@localhost</admin>
 
     <limits>
@@ -100,7 +100,7 @@
  
     <!--
     <relay>
-        <server>stream.laptop</server>
+        <server>laptop</server>
         <port>8003</port>
         <mount>/live.mp4a</mount>
         <local-mount>/live.mp4a</local-mount>
