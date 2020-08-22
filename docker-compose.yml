@@ -1,0 +1,32 @@
+version: '3.6'
+services:
+
+  icecast:
+    container_name: icecast
+    image: cakebread/gigcaster-icecast
+    # working_dir: /home/icecast
+    volumes:
+      - ./config:/home/icecast/config
+      - ./log:/home/icecast/log
+      - ./start.sh:/home/icecast/start.sh
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    environment:
+      - ICECAST_LOCATION=Universe
+      # - ICECAST_ADMIN_EMAIL=
+      # - ICECAST_MAX_LISTENERS=
+      # - ICECAST_MAX_SOURCES=
+      # - ICECAST_SOURCE_PASSWORD=
+      # - ICECAST_RELAY_PASSWORD=
+      - ICECAST_ADMIN_PASSWORD=hackme
+      - ICECAST_HOSTNAME=laptop
+      # - ICECAST_MOUNT_PASSWORD=
+      - ICECAST_RELAY_SERVER=laptop
+
+      # - SUPERVISOR_ADMIN_USER=
+      # - SUPERVISOR_ADMIN_PASSWORD=
+    entrypoint: /home/icecast/start.sh
+    ports:
+      - 8000:8000
+      - 9001:9001
+

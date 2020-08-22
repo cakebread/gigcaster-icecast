@@ -1,0 +1,8 @@
+version: '3.6'
+services:
+
+  icecast:
+    container_name: icecast
+    build: ./
+    image: cakebread/gigcaster-icecast
+    working_dir: /home/icecast
